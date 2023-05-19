@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TP1, formulaire d'inscription multipage</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="app.js"></script>
+</head>
+
+<body>
+
+  <form name="form1" action="test.php" method="post">
+
+    <!-- Premier groupe de composants-->
+    <fieldset data-groupe="1">
+      <legend><b>1/3 - Vos coordonnées (*)</b></legend>
+
+      <input type="radio" name="titre" id="madame" value="madame">
+      <label for="madame">Madame</label>
+      <input type="radio" name="titre" id="monsieur" value="monsieur">
+      <label for="monsieur">Monsieur</label>
+      <span id="errTitre"></span>
+      <br>
+
+      <label for="nom">Nom :</label>
+      <input type="text" name="nom" id="nom" maxlength="100" placeholder="Votre nom">
+      <span id="errNom"></span>
+      <br>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" name="prenom" id="prenom" maxlength="100" placeholder="Votre prénom">
+      <span id="errPrenom"></span>
+      <br>
+
+      <label for="telephone">Numéro de téléphone :</label>
+      <input type="text" name="telephone" id="telephone" maxlength="100" placeholder="Par exemple 514 525-9567">
+      <span id="errTelephone"></span>
+      <br>
+      <p>(*) Tous les champs sont requis.</p>
+    </fieldset>
+
+
+    <!-- Deuxième groupe de composants-->
+    <fieldset data-groupe="2">
+      <legend><b>2/3 - Logement proposé (*)</b></legend>
+
+      <label for="type">Type de logement :</label>
+      <select name="type" id="type">
+        <option value="">Sélectionnez le type de logement</option>
+        <option value="MA">Maison</option>
+        <option value="CO">Condo </option>
+        <option value="CH">Chalet</option>
+      </select>
+      <span id="errType"></span>
+      <br>
+
+      <label for="codePostal">Code postal :</label>
+      <input type="text" name="codePostal" id="codePostal" placeholder="Par exemple A1B 2C3">
+      <span id="errCodePostal"></span>
+      <br>
+
+      <label for="anneeConstruction">Année de construction :</label>
+      <input type="text" name="anneeConstruction" id="anneeConstruction">
+      <span id="errAnneeConstruction"></span>
+      <br>
+
+      <label for="superficie">Superficie (pi2) :</label>
+      <input type="text" name="superficie" id="superficie">
+      <span id="errSuperficie"></span>
+      <br>
+
+      <label for="nbPieces">Nombre de pièces :</label>
+      <input type="text" name="nbPieces" id="nbPieces">
+      <span id="errNbPieces"></span>
+      <br>
+
+      <label for="aProximiteDe">A proximité de :</label>
+      <select name="aProximiteDe[]" id="aProximiteDe" multiple size=5>
+        <option value="AV">Autoroute/ Voie rapide</option>
+        <option value="TC">Transport en commun </option>
+        <option value="PC">Piste cyclable </option>
+        <option value="EP">École primaire </option>
+        <option value="ES">École secondaire </option>
+        <option value="CE">Cégep </option>
+        <option value="GC">Garderie / CPE </option>
+        <option value="HO">Hôpital </option>
+        <option value="PE">Parc / Espace vert </option>
+      </select>
+      <span id="errAProximiteDe[]"></span>
+      <br>
+
+      <textarea name="presentation" rows="5" placeholder="Décrivez les atouts de votre logement"></textarea>
+      <span id="errPresentation"></span>
+      <br>
+      <p>(*) Tous les champs sont requis.</p>
+    </fieldset>
+
+    <fieldset data-groupe="3">
+      <legend><b>3/3 - Par quel(s) moyen(s) avez-vous eu connaissance de notre agence ?</b></legend>
+      <p>Merci de cocher au moins une de ces cases :</p>
+      <span id="errContacts"></span>
+      <br>
+      <label for="contact1">Publicité dans votre boîte aux lettres</label>
+      <input type="checkbox" name="contacts[]" id="contact1" value="1">
+      <br>
+      <label for="contact2">Publicité dans les journaux</label>
+      <input type="checkbox" name="contacts[]" id="contact2" value="2">
+      <br>
+      <label for="contact3">Bouche à oreille</label>
+      <input type="checkbox" name="contacts[]" id="contact3" value="3">
+      <br>
+      <label for="contact4">Lien depuis un autre site internet</label>
+      <input type="checkbox" name="contacts[]" id="contact4" value="4">
+      <br>
+      <label for="contact5">Par un moteur de recherche</label>
+      <input type="checkbox" name="contacts[]" id="contact5" value="5">
+      <br>
+      <label for="contact6">Autre</label>
+      <input type="checkbox" name="contacts[]" id="contact6" value="6">
+    </fieldset>
+
+    <button type="submit" name="envoi">Envoyer</button>
+
+  </form>
+</body>
+
+</html>
